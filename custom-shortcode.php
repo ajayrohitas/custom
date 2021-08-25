@@ -2,4 +2,19 @@
 
 /*
 Plugin Name: custom shortcode
-Description:
+Description: 
+Version: 1.0.0
+Author: Ajay
+*/
+
+add_shortcode('custom_shortcode','custom_shortcode_post');
+
+function custom_shortcode_post() {
+    $args_query = array(
+        'post_status' => 'publish',
+        'posts_per_page' => '5',
+        'order by' => 'post_date'
+        'order' => 'ASC');
+
+$query = new WP_Query($args);
+}
