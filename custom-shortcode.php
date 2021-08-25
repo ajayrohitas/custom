@@ -17,4 +17,14 @@ function custom_shortcode_post() {
         'order' => 'ASC');
 
 $query = new WP_Query($args);
+
+if ( $query->have_post() ) {
+    while( $query->the_post() ){
+        $query->the_post();
+    }
 }
+wp_reset_postdata();
+
+}
+
+?>
